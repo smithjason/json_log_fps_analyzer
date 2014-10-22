@@ -16,11 +16,9 @@ namespace :db do
   end
 
   task :migrate do
-    ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrations'
-    # TODO
-    # => Once things are working, check that you can remove these options
+    ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
     ActiveRecord::Migration.verbose = ENV["VERBOSE"] ? ENV["VERBOSE"] == "true" : true
-    ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths) do |migration|
+    ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths, ENV["VERSION"] ? ENV["VERSION"].to_i : nil) do |migration|
       ENV["SCOPE"].blank? || (ENV["SCOPE"] == migration.scope)
     end
   end
@@ -43,5 +41,5 @@ namespace :fps do
 end
 
 task :console do
-  system("pry -r ./config/environment")
+  exec("irb -r./config/environment")
 end

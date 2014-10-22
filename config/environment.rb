@@ -1,9 +1,6 @@
 # set up gems listed in Gemfile
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
-# app-centric path constants
-APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
-APP_NAME = APP_ROOT.basename.to_s
 
 # Require gems we care about
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
@@ -16,6 +13,10 @@ require 'logger'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'erb'
+
+# app-centric path constants
+APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
+APP_NAME = APP_ROOT.basename.to_s
 
 # set up database and models
 require APP_ROOT.join('config','database')
