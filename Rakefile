@@ -71,6 +71,10 @@ namespace :fps do
       puts "Please enter directory path - 'rake fps:seed_from_path path='example/dir'"
     end
   end
+
+  task :generate_averages do
+    Log.generate_average_fps
+  end
 end
 
 task :console do
