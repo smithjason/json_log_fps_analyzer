@@ -1,7 +1,15 @@
 class Log < ActiveRecord::Base
+  serialize :location, Hash
+
   has_many :samples
 
   FPS_MODIFIER = 100.0
+
+  def self.generate_average_fps
+    all.each do |log|
+      log.generate_average_fps
+    end
+  end
 
   def self.get_average_fps
     average(:average_fps).to_i / FPS_MODIFIER

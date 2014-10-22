@@ -45,7 +45,7 @@ namespace :fps do
           :scene        => log_data['scene'],
           :quest        => log_data['quest'],
           :quest_step   => log_data['quest_step'],
-          # :location     => log_data['location'],
+          :location     => log_data['location'],
           :klass        => log_data['class']
         )
 

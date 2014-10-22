@@ -8,6 +8,7 @@ class CreateLogs < ActiveRecord::Migration
       t.string      :scene
       t.string      :quest
       t.integer     :quest_step
+      t.string      :location
       t.string      :klass
 
       t.timestamps

@@ -1,7 +1,7 @@
-# log queries to STDOUT when in development
-if Sinatra::Application.development?
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
-end
+# # log queries to STDOUT when in development
+# if Sinatra::Application.development?
+#   ActiveRecord::Base.logger = Logger.new(STDOUT)
+# end
 
 # autolaod all models
 Dir[APP_ROOT.join('app','models','*.rb')].each do |model_file|
