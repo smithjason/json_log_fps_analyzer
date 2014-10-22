@@ -28,6 +28,7 @@ end
 namespace :fps do
   task :seed_from_path do
     if ENV['path']
+      FPS_MODIFIER = 100
       path = File.expand_path("#{ENV['path']}")
       puts "Seeding JSON files in directory - #{path}"
 
@@ -51,7 +52,7 @@ namespace :fps do
         log_data['samples'].each do |sample_data|
           log.samples.create(
             :datetime                   => sample_data['datetime'],
-            :fps                        => sample_data['fps'],
+            :fps                        => sample_data['fps'] * FPS_MODIFIER,
             :batches                    => sample_data['batches'],
             :tris                       => sample_data['tris'],
             :num_particle_systems       => sample_data['num_particle_systems'],
@@ -69,12 +70,6 @@ namespace :fps do
     else
       puts "Please enter directory path - 'rake fps:seed_from_path path='example/dir'"
     end
-  end
-
-  # TODO
-  # => Implement when you've gotten everything working with fps:add_path
-  task :seed_paths do
-
   end
 end
 

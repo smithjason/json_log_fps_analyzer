@@ -2,7 +2,7 @@ class CreateSamples < ActiveRecord::Migration
   def change
     create_table :samples do |t|
       t.datetime    :datetime
-      t.decimal     :fps
+      t.integer     :fps
       t.integer     :batches, array: true
       t.integer     :tris, array: true
       t.integer     :num_particle_systems

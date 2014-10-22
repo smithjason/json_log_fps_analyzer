@@ -29,5 +29,3 @@ configure do
   set :root, APP_ROOT.to_path
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
-
-
