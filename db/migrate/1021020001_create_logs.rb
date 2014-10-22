@@ -1,6 +1,6 @@
-class CreateCollections < ActiveRecord::Migration
+class CreateLogs < ActiveRecord::Migration
   def change
-    create_table :collections do |t|
+    create_table :logs do |t|
       t.datetime    :datetime
       t.integer     :seed
       t.string      :act
@@ -8,10 +8,7 @@ class CreateCollections < ActiveRecord::Migration
       t.string      :scene
       t.string      :quest
       t.integer     :quest_step
-      # TODO
-      # => Figure out how to get hstore to work
-      # t.hstore      'location'
-      t.string      :class
+      t.string      :klass
 
       t.timestamps
     end
