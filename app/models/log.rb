@@ -13,13 +13,13 @@ class Log < ActiveRecord::Base
     average_fps / FPS_MODIFIER
   end
 
+  def self.get_average_fps
+    average(:average_fps).to_i / FPS_MODIFIER
+  end
+
   def self.generate_average_fps
     all.each do |log|
       log.generate_average_fps
     end
-  end
-
-  def self.get_average_fps
-    average(:average_fps).to_i / FPS_MODIFIER
   end
 end

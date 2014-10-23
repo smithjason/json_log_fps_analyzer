@@ -1,10 +1,29 @@
 $(document).ready(function(){
   $('select#acts').change(getWorldsInAct);
-  $('select#worlds').change(worldsHandler);
+  $('select#worlds').change(worldSelected);
+  $('form#fps').submit(getFPS);
 });
 
-var worldsHandler = function(event){
-  $('button[type="submit"]').removeAttr("disabled");
+var addFPSListing = function(data){
+  var newFPSResult = $('<li>',{
+    text: "Act: " + data.act + " World: " + data.world + " - FPS: " + data.fps,
+  });
+
+  $('#results_list').append(newFPSResult);
+};
+
+var getFPS = function(event){
+  event.preventDefault();
+  var ajax = $.ajax({
+    type: 'GET',
+    url: this.action,
+    data: $(this).serialize()
+  });
+  ajax.done(addFPSListing)
+};
+
+var worldSelected = function(event){
+  $('input[type="submit"]').removeAttr("disabled");
 };
 
 var updateWorldsDropdown = function(data){
@@ -48,5 +67,3 @@ var getWorldsInAct = function(event){
 
   ajax.done(updateWorldsDropdown);
 };
-
-

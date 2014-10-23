@@ -1,6 +1,6 @@
 HIIIII!!!
 
-<form id="fps" action="">
+<form id="fps" method="get" action="/fps">
   <label for="act">Acts: </label>
   <select name="act" id="acts">
     <option value="" disabled selected>Choose Act</option>
@@ -12,8 +12,14 @@ HIIIII!!!
 
   <label for="world">Worlds: </label>
   <select name="world" id="worlds" disabled>
-    <option value="" disabled="" selected="">Choose World</option>
+    <option value="" disabled selected>Choose World</option>
   </select>
 
-  <button type="submit" disabled>Query FPS</button>
+  <input type="submit" value="Query FPS" disabled>
 </form>
+
+<div id="results_container">
+  <ul id="results_list">
+
+  </ul>
+</div>

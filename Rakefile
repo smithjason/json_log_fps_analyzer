@@ -72,7 +72,7 @@ namespace :fps do
     end
   end
 
-  task :generate_averages do
+  task :generate_fps_averages do
     Log.generate_average_fps
   end
 end

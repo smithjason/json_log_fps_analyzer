@@ -56,11 +56,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
-  activesupport
-  pg
-  rake
-  shotgun
-  sinatra
-  sinatra-contrib
-  thin
+  activerecord (~> 4.1.6)
+  activesupport (~> 4.1.6)
+  pg (~> 0.17.1)
+  rake (~> 10.3.2)
+  shotgun (~> 0.9)
+  sinatra (~> 1.4.5)
+  sinatra-contrib (~> 1.4.2)
+  thin (~> 1.6.3)

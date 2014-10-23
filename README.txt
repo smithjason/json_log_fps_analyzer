@@ -4,7 +4,7 @@ Usage
 bundle install
 rake db:reset
 rake fps:seed_from_path path='some/file/path'
-rake fps:generate_averages
+rake fps:generate_fps_averages
 
 Sources
 ========
