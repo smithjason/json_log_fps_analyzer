@@ -7,8 +7,15 @@ get '/acts' do
 end
 
 get '/acts/:act/worlds' do
-  act = "A#{params[:act]}"
-  worlds = Log.where(act: act).select(:world).distinct.map { |log| log.world }
+  act = params[:act]
+
+  if act == "all"
+    worlds = Log.select(:world).distinct.map { |log| log.world }
+  else
+    act = "A#{act}"
+    worlds = Log.where(act: act).select(:world).distinct.map { |log| log.world }
+  end
+
   worlds.sort
 
   content_type :json

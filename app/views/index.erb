@@ -3,15 +3,17 @@ HIIIII!!!
 <form id="fps" action="">
   <label for="acts">Acts: </label>
   <select name="act" id="acts">
-    <option value=""></option>
+    <option value="" disabled selected>Choose Act</option>
     <% @acts.each_with_index do |act, index| %>
       <option value="<%= index + 1 %>"><%= act %></option>
     <% end %>
-    <option value="ALL">ALL</option>
+    <option value="all">All Acts</option>
   </select>
 
   <label for="worlds">Worlds: </label>
-  <select name="worlds" id="worlds">
-
+  <select name="worlds" id="worlds" disabled>
+    <option value="" disabled="" selected="">Choose World</option>
   </select>
+
+  <button type="submit" disabled>Query FPS</button>
 </form>
