@@ -52,7 +52,7 @@ var updateWorldsDropdown = function(data){
 
   var allOption = $('<option>',{
     text: "All Worlds",
-    value: "All"
+    value: "all"
   });
 
   $('#worlds').append(allOption);
