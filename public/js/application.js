@@ -59,6 +59,8 @@ var updateWorldsDropdown = function(data){
 };
 
 var getWorldsInAct = function(event){
+  $('input[type="submit"]').attr("disabled", true);
+
   var selectedAct = this.value;
   var ajax = $.ajax({
     url: "/acts/" + selectedAct + "/worlds",
