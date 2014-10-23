@@ -1,1 +1,17 @@
-HIII!
+HIIIII!!!
+
+<form id="fps" action="">
+  <label for="acts">Acts: </label>
+  <select name="act" id="acts">
+    <option value=""></option>
+    <% @acts.each_with_index do |act, index| %>
+      <option value="<%= index + 1 %>"><%= act %></option>
+    <% end %>
+    <option value="ALL">ALL</option>
+  </select>
+
+  <label for="worlds">Worlds: </label>
+  <select name="worlds" id="worlds">
+
+  </select>
+</form>

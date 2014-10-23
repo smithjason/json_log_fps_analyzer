@@ -9,5 +9,6 @@ rake fps:generate_averages
 Sources
 ========
 http://guides.rubyonrails.org
+http://api.jquery.com
 http://edgeguides.rubyonrails.org/active_record_postgresql.html
 
