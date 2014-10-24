@@ -13,9 +13,6 @@ get '/fps' do
     fps = Log.where(world: world).get_average_fps
   end
 
-  puts "********* FPS ***********"
-  puts "#{fps}"
-
   content_type :json
   { act: act, world: world, fps: fps }.to_json
 end
